@@ -320,22 +320,39 @@ body {
 
 /* ═══════════════════════════════════════════════════════════
    TEAM CARDS - Enhanced Enterprise Styling
+   (Image movement disabled on hover - visuals limited to card container)
    ═══════════════════════════════════════════════════════════ */
 
 .team-member {
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Keep layout stable - no translate on hover */
+  transition: none;
 }
 
+/* Prevent any vertical translation or position shift on hover */
 .team-member:hover {
-  transform: translateY(-8px);
+  transform: none !important;
 }
 
-.team-member img {
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+/* Ensure images do not move or scale on hover */
+.team-member img,
+.team-photo {
+  transition: none !important;
+  transform: none !important;
 }
 
-.team-member:hover img {
-  transform: scale(1.08);
+/* Explicitly override any hover rules that previously scaled images */
+.team-member:hover img,
+.team-card:hover .team-photo,
+.team-photo:hover {
+  transform: none !important;
+  transition: none !important;
+}
+
+/* Hover styling should be limited to container (shadow/border-color) only */
+.team-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  /* Optional subtle border color change retained from original design */
+  border-color: rgba(0, 0, 0, 0.04);
 }
 
 /* ═══════════════════════════════════════════════════════════
@@ -715,6 +732,32 @@ footer .mt-12.pt-8 > p.text-gray-400 * {
 /* Soft hover effect for subtle interactivity */
 .team-card:hover {
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Team image container - portrait aspect ratio to avoid head cropping */
+.team-image {
+  position: relative; /* container is relative per requirement */
+  width: 100%;
+  aspect-ratio: 4 / 5; /* consistent portrait ratio */
+  display: flex;
+  align-items: flex-start; /* align image to top so head remains visible */
+  justify-content: center; /* center horizontally */
+  background-color: transparent;
+}
+
+.team-photo {
+  position: static; /* image must be static, not absolute */
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain; /* ensure entire head & shoulders visible */
+  object-position: center top; /* keep head aligned to top center */
+  display: block;
+}
+
+/* Ensure card body does not stretch and keeps consistent layout */
+.team-card > .p-6 {
+  flex: 0 0 auto;
 }
 
 /* Team member article styling */
