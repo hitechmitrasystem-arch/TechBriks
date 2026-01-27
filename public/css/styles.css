@@ -1,0 +1,785 @@
+/* ═══════════════════════════════════════════════════════════
+   TECHBRIKS CONSULTING - PREMIUM STYLES
+   Enterprise-Grade Professional Styling
+   ═══════════════════════════════════════════════════════════ */
+
+:root {
+  /* ═══ BRAND COLOR SYSTEM ═══ */
+  --brand-blue: #0B3A5A;          /* Primary Brand Blue - Deep Tech Navy */
+  --brand-blue-dark: #082d47;     /* Darker Blue for hover states */
+  --brand-blue-light: #0d4a73;    /* Lighter Blue for accents */
+  --brand-green: #3FA34D;         /* Secondary Brand Green - Fresh Technology Green */
+  --brand-green-dark: #358a42;    /* Darker Green for hover states */
+  --brand-green-light: #4db85c;   /* Lighter Green */
+  --brand-green-tint: #e8f5ea;    /* Light green tint for backgrounds */
+  --text-primary: #1F2937;        /* Neutral Text - Dark Gray */
+  --bg-white: #FFFFFF;            /* Background White */
+  --bg-light: #F8FAFC;            /* Background Light Gray */
+  
+  /* Legacy color mappings for compatibility */
+  --brand-50: #e8f5ea;
+  --brand-600: #0B3A5A;
+  --brand-700: #082d47;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-spring: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BRAND TYPOGRAPHY SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+h1, h2, h3 {
+  color: var(--brand-blue);
+}
+
+.text-brand-blue {
+  color: var(--brand-blue) !important;
+}
+
+.text-brand-green {
+  color: var(--brand-green) !important;
+}
+
+.bg-brand-blue {
+  background-color: var(--brand-blue) !important;
+}
+
+.bg-brand-green {
+  background-color: var(--brand-green) !important;
+}
+
+/* Logo Text Split Colors */
+.logo-tech {
+  color: var(--brand-blue);
+}
+
+.logo-briks {
+  color: var(--brand-green);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BRAND BUTTON SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+/* Primary Button - Enterprise Style with Brand Blue Only */
+.btn-brand-primary,
+.btn-primary {
+  background-color: var(--brand-blue);
+  color: white;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-brand-primary:hover,
+.btn-primary:hover {
+  background-color: var(--brand-blue-dark) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(11, 58, 90, 0.35);
+}
+
+.btn-brand-primary:active,
+.btn-primary:active {
+  background-color: var(--brand-blue) !important;
+  transform: translateY(0) scale(0.98);
+}
+
+/* Secondary Button */
+.btn-brand-secondary {
+  background-color: transparent;
+  border: 2px solid var(--brand-green);
+  color: var(--brand-blue);
+  transition: var(--transition-smooth);
+}
+
+.btn-brand-secondary:hover {
+  background-color: var(--brand-green-tint);
+  border-color: var(--brand-green);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BRAND LINK SYSTEM
+   ═══════════════════════════════════════════════════════════ */
+
+a:hover {
+  color: var(--brand-green);
+}
+
+/* Section divider using brand blue */
+.section-divider {
+  border-color: var(--brand-blue);
+  opacity: 0.2;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   NAVIGATION - Enterprise Consulting Style
+   ═══════════════════════════════════════════════════════════ */
+
+.navbar {
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.98) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Desktop Nav Links - Professional Underline Effect */
+.nav-link {
+  position: relative;
+  color: var(--text-primary);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--brand-green) !important;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--brand-green);
+  border-radius: 1px;
+  transform: translateX(-50%);
+  transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: calc(100% - 32px);
+}
+
+.nav-link.active {
+  color: var(--brand-blue);
+}
+
+.nav-link.active::after {
+  width: calc(100% - 32px);
+  background: var(--brand-green);
+}
+
+/* Mobile Menu Slide Animation */
+#mobile-menu {
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), 
+              opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#mobile-menu.menu-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Ensure mobile menu items are always clickable when menu is open */
+#mobile-menu a {
+  position: relative;
+  z-index: 41;
+  cursor: pointer;
+  touch-action: manipulation;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+/* Ensure backdrop handles clicks properly */
+#mobile-menu-backdrop {
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Hamburger Animation - X Transform */
+#hamburger-top,
+#hamburger-middle,
+#hamburger-bottom {
+  transform-origin: center;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s ease;
+}
+
+.menu-open #hamburger-top {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-open #hamburger-middle {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-open #hamburger-bottom {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile safe area support */
+@supports (padding-bottom: env(safe-area-inset-bottom)) {
+  #mobile-menu nav {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   GRADIENTS & EFFECTS
+   ═══════════════════════════════════════════════════════════ */
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-green) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* Brand accent highlight */
+.brand-accent {
+  color: var(--brand-green);
+}
+
+/* Icon styling with brand green */
+.brand-icon {
+  color: var(--brand-green);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+
+.scroll-animate {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-animate-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-animate-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-animate-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.scroll-animate.delay-100 { transition-delay: 0.1s; }
+.scroll-animate.delay-200 { transition-delay: 0.2s; }
+.scroll-animate.delay-300 { transition-delay: 0.3s; }
+.scroll-animate.delay-400 { transition-delay: 0.4s; }
+.scroll-animate.delay-500 { transition-delay: 0.5s; }
+
+/* ═══════════════════════════════════════════════════════════
+   CARDS & INTERACTIONS
+   ═══════════════════════════════════════════════════════════ */
+
+.service-card {
+  transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+.service-card .icon-wrapper {
+  transition: var(--transition-spring);
+}
+
+.service-card:hover .icon-wrapper {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TEAM CARDS - Enhanced Enterprise Styling
+   ═══════════════════════════════════════════════════════════ */
+
+.team-member {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member:hover {
+  transform: translateY(-8px);
+}
+
+.team-member img {
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.team-member:hover img {
+  transform: scale(1.08);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ENHANCED SCROLL ANIMATIONS
+   ═══════════════════════════════════════════════════════════ */
+
+.scroll-animate-scale {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scroll-animate-scale.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Subtle fade-in with slide */
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-slide-in {
+  animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   INTERACTIVE ELEMENTS - Enterprise Polish
+   ═══════════════════════════════════════════════════════════ */
+
+/* Card hover lift effect */
+.hover-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* Subtle shadow grow on hover */
+.hover-shadow-grow {
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-shadow-grow:hover {
+  box-shadow: 0 8px 30px rgba(11, 58, 90, 0.12);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ACCESSIBILITY
+   ═══════════════════════════════════════════════════════════ */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brand-green);
+  outline-offset: 2px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLLBAR
+   ═══════════════════════════════════════════════════════════ */
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--brand-blue);
+  border-radius: 6px;
+  opacity: 0.6;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--brand-green);
+}
+
+::selection {
+  background-color: var(--brand-blue);
+  color: white;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   IMAGE SECTIONS - Enhanced Responsive Styling
+   ═══════════════════════════════════════════════════════════ */
+
+/* Image hover base effect */
+.image-hover {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-hover:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  transform: translateY(-4px);
+}
+
+/* Image zoom on hover */
+.image-hover-zoom {
+  overflow: hidden;
+}
+
+.image-hover-zoom img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.image-hover-zoom:hover img {
+  transform: scale(1.03);
+}
+
+/* About section image fade-in */
+.scroll-animate-left img {
+  animation: fadeInImage 0.8s ease-out forwards;
+}
+
+@keyframes fadeInImage {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Philosophy section smooth fade */
+.scroll-animate-right img {
+  animation: fadeInImageRight 0.8s ease-out forwards;
+}
+
+@keyframes fadeInImageRight {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Respect prefers-reduced-motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .image-hover,
+  .image-hover img,
+  .image-hover-zoom img,
+  .scroll-animate-left img,
+  .scroll-animate-right img {
+    transition: none;
+    animation: none;
+  }
+  
+  .image-hover:hover,
+  .image-hover-zoom:hover img {
+    transform: none;
+  }
+}
+
+/* Responsive image sizing for different breakpoints */
+@media (max-width: 1024px) {
+  .image-hover img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 640px) {
+  .image-hover {
+    border-radius: 1rem;
+  }
+  
+  .image-hover-zoom:hover img {
+    transform: scale(1.02);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+
+/* ═══════════════════════════════════════════════════════════
+   CLIENT LOGO SECTION - VALUE DELIVERED FOR - MARQUEE CAROUSEL
+   ═══════════════════════════════════════════════════════════ */
+
+/* Carousel Container - Hides overflow for seamless loop */
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0;
+  margin: 2rem 0 0 0;
+  background: linear-gradient(to right, transparent 0%, white 10%, white 90%, transparent 100%);
+}
+
+/* Carousel Track - True marquee animation with duplicated items */
+.carousel-track {
+  display: flex;
+  gap: 2rem;
+  animation: carouselScroll 60s linear infinite;
+  width: fit-content;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Pause animation on hover (container or track) */
+.carousel-container:hover .carousel-track,
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+/* Infinite scrolling animation - LEFT TO RIGHT motion (continuous) */
+@keyframes carouselScroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Individual carousel item - fixed sizing to prevent stretching */
+.carousel-item {
+  flex: 0 0 200px; /* fixed card width to prevent stretching */
+  max-width: 220px;
+  box-sizing: border-box;
+  height: auto;
+  padding: 0 0.5rem;
+}
+
+/* Tablet: show 2-3 logos */
+@media (max-width: 1023px) {
+  .carousel-item {
+    flex: 0 0 180px;
+    max-width: 200px;
+    padding: 0 0.5rem;
+  }
+}
+
+/* Mobile: show 1-2 logos */
+@media (max-width: 767px) {
+  .carousel-item {
+    flex: 0 0 160px;
+    max-width: 180px;
+    padding: 0 0.375rem;
+  }
+  
+  .carousel-track {
+    gap: 1.25rem;
+    animation-duration: 45s;
+  }
+}
+
+/* Client logo card styles */
+.client-logo-item {
+  border: 1px solid rgba(11, 58, 90, 0.1);
+  background-color: #FFFFFF;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2.25rem 1.75rem;
+  border-radius: 0.875rem;
+  height: 180px;
+  width: 100%;
+  will-change: box-shadow, border-color, transform;
+  box-shadow: 0 2px 8px rgba(11, 58, 90, 0.06);
+}
+
+.client-logo-item:hover {
+  transform: scale(1.03);
+  box-shadow: 0 16px 32px rgba(11, 58, 90, 0.15);
+  border-color: rgba(63, 163, 77, 0.25);
+}
+
+.client-logo-item img {
+  transition: opacity 0.3s ease-in-out;
+  max-width: 90%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
+.client-logo-item:hover img {
+  opacity: 0.95;
+}
+
+/* Responsive logo card heights */
+@media (max-width: 1024px) {
+  .client-logo-item {
+    height: 160px;
+    padding: 2rem 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .client-logo-item {
+    height: 140px;
+    padding: 1.75rem 1.25rem;
+  }
+}
+
+/* Accessibility - Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .carousel-track {
+    animation: none;
+    transform: translateX(0);
+  }
+}
+
+/* Navigation Links - Change text color to Brand Blue */
+.nav-link {
+  color: var(--brand-blue) !important;
+}
+
+.nav-link:hover {
+  color: var(--brand-green) !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   FOOTER COPYRIGHT TEXT - VISIBILITY FIX
+   ═══════════════════════════════════════════════════════════ */
+
+/* Ensure footer copyright paragraph and its inline children are pure white for optimal contrast */
+footer p.text-gray-400 {
+  color: #FFFFFF !important;
+}
+
+/* Keep broader fallback for other footer text that may use the utility class */
+footer .text-gray-400 {
+  color: #FFFFFF !important;
+}
+
+/* Specifically override any inline color applied to spans inside the copyright paragraph
+   (targets the bottom-bar copyright paragraph and its children only) */
+footer .mt-12.pt-8 > p.text-gray-400,
+footer .mt-12.pt-8 > p.text-gray-400 * {
+  color: #FFFFFF !important;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TEAM CARD STYLING - MINIMAL CLEAN DESIGN
+   ═══════════════════════════════════════════════════════════ */
+
+/* Team card container with subtle shadow */
+.team-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Soft hover effect for subtle interactivity */
+.team-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Team member article styling */
+.team-member {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Responsive team grid layout */
+@media (max-width: 1023px) {
+  /* Tablet: 2 cards per row */
+  .team-member {
+    flex-basis: calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile: 1 card per row, centered */
+  .team-member {
+    flex-basis: 100%;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SERVICES GRID - EQUAL HEIGHT CARDS LAYOUT
+   ═══════════════════════════════════════════════════════════ */
+
+/* Services grid container using CSS Grid for equal height cards */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  width: 100%;
+}
+
+/* Service card flex layout for proper content alignment */
+.service-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Ensure flex-1 content area grows to fill available space */
+.service-card > div {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Responsive services grid */
+@media (max-width: 1023px) {
+  /* Tablet: 2 columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  /* Mobile: 1 column */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}

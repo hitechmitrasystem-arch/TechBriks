@@ -1,0 +1,62 @@
+# 📸 UPLOAD THESE 9 IMAGES
+
+Copy/Save these images to: `C:\Users\Surjendu\OneDrive\Desktop\japan\demo-com\public\images\`
+
+## Required Images:
+
+### 1. Logo
+**File:** logo.png  
+**Current Location:** `C:\Users\Surjendu\OneDrive\Desktop\japan\demo-com\logo.png`  
+**Action:** MOVE to `/public/images/` folder  
+
+### 2. Hero Background
+**File:** hero-bg.jpg  
+**Size:** 1920x1080px  
+**Type:** Technology/consulting themed background  
+
+### 3. About Image
+**File:** about-image.jpg  
+**Size:** 800x600px  
+**Type:** Office/team/business image  
+
+### 4. Philosophy Image
+**File:** philosophy-image.jpg  
+**Size:** 800x600px  
+**Type:** Building blocks/methodology image  
+
+### 5. Why TechBriks Image
+**File:** why-techbriks.jpg  
+**Size:** 800x600px  
+**Type:** Trust/certification/quality image  
+
+### 6-9. Team Photos
+**Files:**
+- team-member-1.jpg (Sarah Chen - CTO)
+- team-member-2.jpg (Michael Rodriguez - VP Engineering)
+- team-member-3.jpg (Priya Patel - Head of Product Design)
+- team-member-4.jpg (David Kim - Director Cloud Services)
+
+**Size:** 400x400px (square)  
+**Type:** Professional headshots  
+
+---
+
+## Quick Action Checklist:
+
+- [ ] Move logo.png to /public/images/
+- [ ] Add hero-bg.jpg
+- [ ] Add about-image.jpg
+- [ ] Add philosophy-image.jpg
+- [ ] Add why-techbriks.jpg
+- [ ] Add team-member-1.jpg
+- [ ] Add team-member-2.jpg
+- [ ] Add team-member-3.jpg
+- [ ] Add team-member-4.jpg
+- [ ] Refresh browser to see images
+
+**Total:** 9 images needed
+
+**Where to get free professional images:**
+- Unsplash.com (free stock photos)
+- Pexels.com (free stock photos)
+- AI Generated (Midjourney, DALL-E)
